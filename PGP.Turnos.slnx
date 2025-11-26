@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="PGP.Turnos.Datos/PGP.Turnos.Datos.csproj" />
+  <Project Path="PGP.Turnos.Modelos/PGP.Turnos.Modelos.csproj" />
+  <Project Path="PGP.Turnos.Negocio/PGP.Turnos.Negocio.csproj" />
+  <Project Path="PGP.Turnos.UI/PGP.Turnos.UI.csproj" />
+</Solution>

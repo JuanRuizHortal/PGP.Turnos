@@ -1,0 +1,12 @@
+# No subir el archivo con la contraseña real
+PGP.Turnos.UI/App.config
+
+# Carpetas de compilación
+bin/
+obj/
+
+# Cosas de Visual Studio
+.vs/
+*.user
+*.suo
+*.userprefs
