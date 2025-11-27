@@ -1,7 +1,6 @@
 using System;
 using System.Windows.Forms;
 using PGP.Turnos.Negocio;
-using PGP.Turnos.Modelos;
 
 namespace PGP.Turnos.UI
 {
@@ -13,15 +12,6 @@ namespace PGP.Turnos.UI
         {
             InitializeComponent();
             _authService = new AutenticacionService();
-
-            // Registrar el handler Load (si el diseñador ya lo hace no perjudica)
-            this.Load += FrmLogin_Load;
-        }
-
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-            // Mostrar estado global en el título del formulario
-            Text = $"PGP Turnos - Usuario: {EstadoGlobal.LoginUsuario} - Unidad: {EstadoGlobal.UnidadActual}";
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -38,11 +28,9 @@ namespace PGP.Turnos.UI
                 return;
             }
 
-            // Mostrar mensaje con el área después de que la validación (SQL) se complete
-            MessageBox.Show($"El área es: {EstadoGlobal.PrivilegiosUsuario}", "Acceso correcto",
+            MessageBox.Show("Login correcto.", "Bienvenido",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Si todo va bien, cerrar login con OK
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

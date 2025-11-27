@@ -1,5 +1,8 @@
 ﻿namespace PGP.Turnos.Modelos
 {
+    /// <summary>
+    /// Representa un registro de la tabla 'usuarios'.
+    /// </summary>
     public class Usuario
     {
         public int Dni { get; set; }

@@ -1,16 +1,25 @@
+using System;
+using System.Windows.Forms;
+
 namespace PGP.Turnos.UI
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+
+            using (var frmLogin = new FrmLogin())
+            {
+                var resultado = frmLogin.ShowDialog();
+
+                if (resultado != DialogResult.OK)
+                {
+                    return;    // si no hay login correcto, salimos
+                }
+            }
+
             Application.Run(new FrmLogin());
         }
     }
