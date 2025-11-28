@@ -16,11 +16,12 @@ namespace PGP.Turnos.UI
 
                 if (resultado != DialogResult.OK)
                 {
-                    return;    // si no hay login correcto, salimos
+                    return;    // si login falla o cancelan, se sale
                 }
             }
 
-            Application.Run(new FrmLogin());
+            // IMPORTANTE: aquí tiene que ser FrmPanelControl, NO Form1
+            Application.Run(new FrmPanelControl());
         }
     }
 }

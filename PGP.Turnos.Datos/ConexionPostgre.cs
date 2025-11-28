@@ -3,9 +3,6 @@ using Npgsql;
 
 namespace PGP.Turnos.Datos
 {
-    /// <summary>
-    /// Proporciona métodos para obtener conexiones a PostgreSQL.
-    /// </summary>
     public static class ConexionPostgre
     {
         public static string ObtenerCadenaConexion()
@@ -23,10 +20,25 @@ namespace PGP.Turnos.Datos
             return cs;
         }
 
+        /// <summary>
+        /// Devuelve una conexión SIN abrir.
+        /// (La conservamos por si en algún sitio quieres controlarlo tú.)
+        /// </summary>
         public static NpgsqlConnection CrearConexion()
         {
             var connString = ObtenerCadenaConexion();
             return new NpgsqlConnection(connString);
+        }
+
+        /// <summary>
+        /// Devuelve una conexión YA ABIERTA lista para usar.
+        /// Este es el método que utilizamos en los repositorios.
+        /// </summary>
+        public static NpgsqlConnection ObtenerConexion()
+        {
+            var conn = CrearConexion();
+            conn.Open();
+            return conn;
         }
     }
 }

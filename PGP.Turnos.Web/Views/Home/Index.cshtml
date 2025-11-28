@@ -1,0 +1,27 @@
+@{
+    Layout = null;
+    var area = TempData["Area"] ?? "(no disponible)";
+    var login = TempData["Login"] ?? "(no disponible)";
+    var unidad = TempData["Unidad"] ?? "(no disponible)";
+    var privilegios = TempData["Privilegios"] ?? "(no disponible)";
+    var anioTrabajo = TempData["AnioTrabajo"] ?? "(no disponible)";
+    var fechaSeguridad = TempData["FechaSeguridad"] ?? "(no disponible)";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PGP Turnos - Panel</title>
+</head>
+<body>
+    <h1>Panel de control (Web)</h1>
+    <p>Usuario: @login</p>
+    <p>Área: @area</p>
+    <p>Unidad: @unidad</p>
+    <p>Privilegios: @privilegios</p>
+    <p>Año de trabajo: @anioTrabajo</p>
+    <p>Fecha seguridad: @fechaSeguridad</p>
+    <p><a href="/Account/Login">Cerrar sesión / Iniciar sesión otra vez</a></p>
+</body>
+</html>
